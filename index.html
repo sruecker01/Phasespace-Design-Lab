@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Phasespace Design Lab explores how making things can help us understand them. Discover research tools, experimental projects, writing, and a human–AI collaboration.">
+  <meta name="theme-color" content="#ffffff">
+  
+  <title>Phasespace Design Lab</title>
+  <style>:root {
+  color-scheme: light;
+  --paper: #fff;
+  --ink: #171717;
+  --muted: #606060;
+  --line: #dcdcdc;
+  --soft: #f5f5f3;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; font-family: var(--sans); font-size: 16px; line-height: 1.6; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-underline-offset: 5px; }
+button, input { font: inherit; }
+button { color: inherit; }
+button, summary, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+[hidden] { display: none !important; }
+::selection { color: white; background: #303030; }
+h1,h2,h3,p { margin-top: 0; }
+.wrap { width: min(1184px, calc(100% - 112px)); margin-inline: auto; }
+.skip-link { position: fixed; top: -100px; left: 24px; z-index: 100; padding: 12px 20px; color: white; background: black; }
+.skip-link:focus { top: 12px; }
+.site-header { background: #fff; border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 151px; padding-block: 12px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: block; flex: 0 0 auto; line-height: 0; text-decoration: none; }
+.brand-logo { display: block; width: 110px; height: auto; }
+nav { display: flex; gap: 32px; align-items: center; }
+nav a { text-decoration: none; font-size: 13px; padding-block: 12px; }
+nav a:hover { text-decoration: underline; }
+nav a:last-child { margin-left: 10px; }
+nav a span { margin-left: 8px; }
+.hero { display: grid; grid-template-columns: 1.18fr 1fr; gap: 76px; padding-top: 58px; padding-bottom: 61px; align-items: center; }
+.hero-description { padding-top: 30px; }
+.hero-copy h1 { margin-bottom: 0; }
+.eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 1.7px; font-weight: 600; line-height: 1.65; margin-bottom: 25px; }
+.hero .eyebrow { display: flex; gap: 10px; align-items: center; }
+.small-dot { width: 6px; height: 6px; background: currentColor; border-radius: 50%; display: inline-block; flex: 0 0 6px; }
+h1 { font-family: var(--serif); font-size: clamp(64px, 7.5vw, 100px); font-weight: 400; line-height: 1.02; letter-spacing: -5px; margin-bottom: 30px; }
+h1 span { display: block; }
+h1 span:last-child { font-style: italic; }
+.hero-intro { font-size: 19px; line-height: 1.65; max-width: 480px; margin-bottom: 14px; }
+.hero-note { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 390px; margin-bottom: 29px; }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 38px; padding: 14px 21px; background: var(--ink); border: 1px solid var(--ink); color: white; text-decoration: none; font-size: 13px; min-height: 50px; transition: background .15s, color .15s; }
+.button:hover { background: #fff; color: var(--ink); }
+.button span { font-size: 22px; line-height: 1; }
+.hero-foot { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 18px; padding-bottom: 18px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--muted); }
+.draft-label { color: #707070; }
+.section { padding-block: 83px; }
+.section-header { display: grid; grid-template-columns: 1.18fr 1fr; gap: 76px; margin-bottom: 37px; align-items: end; }
+h2 { font-family: var(--serif); font-size: clamp(36px, 3.55vw, 48px); letter-spacing: -1.8px; line-height: 1.13; font-weight: 400; margin-bottom: 0; }
+.section-header .eyebrow { margin-bottom: 17px; }
+.section-deck { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 430px; margin-bottom: 2px; }
+.filter-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 27px; }
+.filters { display: flex; flex-wrap: wrap; gap: 7px; }
+.filters button { border: 1px solid var(--line); background: white; border-radius: 0; cursor: pointer; font-size: 12px; line-height: 1.2; padding: 11px 15px; min-height: 40px; transition: background .15s, color .15s; }
+.filters button:hover { border-color: var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: white; }
+.result-count { flex-shrink: 0; color: var(--muted); font-size: 11px; margin: 0; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); column-gap: 48px; align-items: stretch; }
+.project { border-bottom: 1px solid var(--line); padding: 27px 0 21px; min-height: 249px; }
+.project-meta { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.5; margin-bottom: 17px; }
+.project-number { font-family: var(--serif); font-size: 17px; letter-spacing: 0; font-style: italic; color: #707070; }
+.project h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; letter-spacing: -.8px; line-height: 1.2; margin-bottom: 14px; }
+.project-description { font-size: 15px; color: #535353; line-height: 1.8; max-width: 455px; margin-bottom: 16px; }
+summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; justify-content: space-between; gap: 15px; min-height: 34px; }
+summary::-webkit-details-marker { display: none; }
+.project summary { font-size: 12px; padding-block: 6px; }
+.project summary:hover span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+.expand-icon { font-size: 20px; font-weight: 300; line-height: 1; display: inline-block; flex: 0 0 auto; transition: transform .15s; }
+details[open] > summary .expand-icon { transform: rotate(45deg); }
+.project-details { padding-top: 12px; }
+.project-question { font-family: var(--serif); font-size: 21px; line-height: 1.4; margin-bottom: 10px; }
+.project-note { font-size: 13px; line-height: 1.8; color: var(--muted); margin-bottom: 4px; }
+.elsewhere { font-size: 13px; color: var(--muted); margin: 26px 0 0; max-width: 820px; line-height: 1.8; }
+.approach { background: var(--ink); color: #fff; }
+.approach-top { display: grid; grid-template-columns: 1.15fr 1fr; gap: 86px; align-items: end; margin-bottom: 49px; }
+.approach .eyebrow { color: #c7c7c7; margin-bottom: 19px; }
+.approach h2 { max-width: 430px; font-size: clamp(40px, 4.2vw, 58px); }
+.approach-intro { font-size: 17px; color: #d7d7d7; line-height: 1.8; margin-bottom: 3px; }
+.principles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin-bottom: 34px; }
+.principle { border-top: 1px solid #5c5c5c; padding-top: 21px; }
+.principle h3 { font-size: 15px; font-weight: 500; line-height: 1.6; margin-bottom: 11px; }
+.principle p { color: #c7c7c7; font-size: 13px; line-height: 1.8; margin: 0; }
+.approach-notes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+.approach-notes details { border-top: 1px solid #5c5c5c; }
+.approach-notes summary { font-size: 13px; padding-block: 19px 3px; }
+.note-body { font-size: 14px; line-height: 1.85; color: #d7d7d7; padding-top: 19px; }
+.note-body p { margin-bottom: 12px; }
+.people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.person { border-top: 1px solid var(--line); padding-top: 26px; }
+.person h3 { font-family: var(--serif); font-size: 33px; font-weight: 400; letter-spacing: -1px; line-height: 1.2; margin-bottom: 6px; }
+.person-role { font-size: 11px; letter-spacing: .4px; color: var(--muted); margin-bottom: 21px; }
+.person-description { font-size: 15px; line-height: 1.9; margin-bottom: 18px; }
+.person-note { color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.65; margin-bottom: 0; }
+.person:nth-child(2) .person-note { font-family: var(--sans); font-size: 12px; line-height: 1.85; font-style: normal; }
+.contact { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.contact-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 70px; align-items: center; }
+.contact h2 { max-width: 530px; font-size: clamp(40px,4.1vw,56px); margin-bottom: 23px; }
+.contact .eyebrow { margin-bottom: 18px; }
+.contact-description { max-width: 480px; font-size: 15px; line-height: 1.85; color: var(--muted); margin-bottom: 0; }
+.contact-action { justify-self: end; }
+.contact-action .button { min-width: 213px; }
+.email-link { display: block; margin-top: 18px; font-size: 15px; text-decoration-thickness: 1px; }
+.contact-action p { font-size: 11px; margin-top: 13px; margin-bottom: 0; color: var(--muted); max-width: 260px; }
+.site-footer { display: flex; justify-content: space-between; gap: 20px; align-items: center; min-height: 97px; font-size: 11px; }
+.site-footer p { margin: 0; }
+.site-footer p:nth-child(2) { color: var(--muted); }
+.site-footer a { padding-block: 10px; text-decoration: none; }
+@media (min-width: 1600px) { .hero { padding-top: 68px; padding-bottom: 71px; } }
+@media (max-width: 1020px) {
+  .wrap { width: calc(100% - 72px); }
+  .hero { gap: 40px; padding-top: 50px; padding-bottom: 52px; }
+  h1 { font-size: 76px; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1.1px; }
+  .hero-intro { font-size: 17px; }
+  .section-header, .approach-top { gap: 40px; }
+  .project-grid { column-gap: 34px; }
+  .principles { grid-template-columns: 1fr 1fr; gap: 27px 40px; }
+  .contact-inner { gap: 40px; }
+}
+@media (max-width: 700px) {
+  html { scroll-padding-top: 22px; }
+  .wrap { width: calc(100% - 40px); }
+  .header-inner { min-height: 114px; gap: 14px; padding-block: 12px; }
+  .brand-logo { width: 78px; }
+  nav { gap: 16px; }
+  nav a { font-size: 11px; }
+  nav a:last-child { margin-left: 0; }
+  nav a span { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 35px; gap: 23px; }
+  .hero-description { padding-top: 0; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1.4px; margin-bottom: 23px; }
+  h1 { font-size: clamp(62px, 15.5vw, 82px); letter-spacing: -3px; line-height: 1.02; margin-bottom: 23px; }
+  .hero-intro { font-size: 17px; max-width: 490px; }
+  .hero-note { font-size: 13px; margin-bottom: 23px; max-width: 350px; }
+  .hero-foot { flex-wrap: wrap; gap: 9px 15px; font-size: 8px; letter-spacing: 1px; }
+  .hero-foot span:nth-child(2) { display: none; }
+  .section { padding-block: 55px; }
+  .section-header { grid-template-columns: 1fr; gap: 21px; margin-bottom: 24px; }
+  .section-header .eyebrow { margin-bottom: 13px; }
+  h2 { font-size: 38px; letter-spacing: -1.4px; }
+  .section-deck { font-size: 14px; }
+  .filter-bar { flex-wrap: wrap; gap: 13px; margin-bottom: 20px; }
+  .filters { gap: 6px; }
+  .filters button { font-size: 11px; padding: 11px 12px; min-height: 40px; }
+  .result-count { font-size: 10px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project { padding-block: 25px 18px; min-height: 0; }
+  .project h3 { font-size: 29px; }
+  .project-meta { margin-bottom: 15px; }
+  .project-description { font-size: 15px; }
+  .project summary { min-height: 44px; }
+  .elsewhere { font-size: 12px; }
+  .approach-top { grid-template-columns: 1fr; gap: 25px; margin-bottom: 31px; }
+  .approach h2 { font-size: 44px; max-width: 370px; }
+  .approach-intro { font-size: 15px; }
+  .principles { gap: 24px 20px; }
+  .principle h3 { font-size: 14px; }
+  .principle p { font-size: 12px; }
+  .approach-notes { grid-template-columns: 1fr; gap: 19px; }
+  .approach-notes summary { padding-block: 17px 0; min-height: 45px; }
+  .people-grid { grid-template-columns: 1fr; gap: 35px; }
+  .person h3 { font-size: 32px; }
+  .person-description { font-size: 15px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 30px; }
+  .contact h2 { font-size: 43px; max-width: 380px; }
+  .contact-description { font-size: 14px; }
+  .contact-action { justify-self: start; }
+  .site-footer { min-height: 86px; gap: 12px; font-size: 10px; }
+  .site-footer p:nth-child(2) { display: none; }
+}
+@media (max-width: 360px) {
+  .header-inner { gap: 12px; }
+  .brand-logo { width: 70px; }
+  nav { gap: 11px; }
+  nav a { font-size: 10px; }
+  h1 { font-size: 61px; }
+  h2 { font-size: 34px; }
+  .principles { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+@media print {
+  html { scroll-behavior: auto; }
+  .site-header nav, .button, .filter-bar, .site-footer a { display: none !important; }
+  .wrap { width: 100%; }
+  .hero { padding-block: 24px; }
+  h1 { font-size: 60px; }
+  .section { padding-block: 28px; }
+  .approach { background: white; color: black; }
+  .approach p, .approach .eyebrow, .note-body { color: #444; }
+  .project { break-inside: avoid; }
+  .project[hidden] { display: block !important; }
+}
+
+.person-note:empty { display: none; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Phasespace Design Lab, back to top"><img class="brand-logo" src="data:image/png;base64,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" width="240" height="276" alt="Phasespace Design Lab"></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#approach">Approach</a><a href="#people">People</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-dot" aria-hidden="true"></span>Independent design research laboratory</p>
+        <h1 id="hero-title"><span>Learning</span><span>by making.</span></h1>
+      </div>
+      <div class="hero-description">
+        <p class="hero-intro">We design tools, methods, and environments that improve human inquiry, knowledge production, and action.</p>
+        <p class="hero-note">Software, experimental objects, books, cartoons, and other ways of finding out.</p>
+        <a class="button" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
+      </div>
+    </section>
+    <div class="wrap hero-foot"><span>Research through design</span><span>Ideas made examinable</span></div>
+    <section class="wrap section work" id="work" aria-labelledby="work-title">
+      <div class="section-header">
+        <div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Questions taking shape.</h2></div>
+        <p class="section-deck">Projects and open questions from the lab’s wider collection, spanning research tools, physical concepts, writing, and learning.</p>
+      </div>
+      <div class="filter-bar" hidden>
+        <div class="filters" role="group" aria-label="Filter projects by focus"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="Tools" aria-pressed="false">Tools</button><button type="button" data-filter="Experiments" aria-pressed="false">Experiments</button><button type="button" data-filter="Writing" aria-pressed="false">Writing</button><button type="button" data-filter="Learning" aria-pressed="false">Learning</button></div>
+        <p class="result-count" role="status" aria-live="polite" aria-atomic="true">8 projects</p>
+      </div>
+      <div class="project-grid"><article class="project" id="project-registrymaker" data-category="Tools" aria-labelledby="title-registrymaker">
+  <div class="project-meta"><span>Tools / Research software</span><span class="project-number" aria-hidden="true">01</span></div>
+  <h3 id="title-registrymaker">RegistryMaker</h3>
+  <p class="project-description">Building structured research collections that can grow across projects, with sources and assessments kept alongside the records.</p>
+  <details><summary><span>Project note<span class="sr-only">: RegistryMaker</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">How can a growing body of research remain usable?</p><p class="project-note">The work brings discovery, evidence assessment, and the organisation of research records into a shared workflow. The aim is to make a collection useful beyond the search that first produced it.</p></div></details>
+</article><article class="project" id="project-animal-music" data-category="Experiments" aria-labelledby="title-animal-music">
+  <div class="project-meta"><span>Experiments / Sound exploration</span><span class="project-number" aria-hidden="true">02</span></div>
+  <h3 id="title-animal-music">Animal music</h3>
+  <p class="project-description">An exploration of music in animals’ own hearing ranges, beginning with a listener other than ourselves.</p>
+  <details><summary><span>Project note<span class="sr-only">: Animal music</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">What might music become for a different kind of listener?</p><p class="project-note">The listener’s range of hearing becomes a design constraint. The project begins by asking how the idea of music changes when the intended audience is another animal.</p></div></details>
+</article><article class="project" id="project-ecology-of-ideas" data-category="Writing" aria-labelledby="title-ecology-of-ideas">
+  <div class="project-meta"><span>Writing / Book-series project</span><span class="project-number" aria-hidden="true">03</span></div>
+  <h3 id="title-ecology-of-ideas">The Ecology of Ideas</h3>
+  <p class="project-description">Following ideas as they disappear, take root, spread, become indispensable, or wait for conditions in which they might return.</p>
+  <details><summary><span>Project note<span class="sr-only">: The Ecology of Ideas</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">What lets an idea survive, and what makes it difficult to displace?</p><p class="project-note">This writing project follows ideas through the circumstances that sustain them or make them difficult to continue. Case-based research informs the developing series.</p></div></details>
+</article><article class="project" id="project-atry" data-category="Learning" aria-labelledby="title-atry">
+  <div class="project-meta"><span>Learning / Cartoons &amp; activity books</span><span class="project-number" aria-hidden="true">04</span></div>
+  <h3 id="title-atry">Atry’s World</h3>
+  <p class="project-description">A science-girl cartoon project about curiosity and everyday thinking, with related activity-book and colouring-page work.</p>
+  <details><summary><span>Project note<span class="sr-only">: Atry’s World</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">Where can an ordinary question lead?</p><p class="project-note">Atry’s World brings scientific curiosity into familiar situations through cartoons. Related collection and activity-book projects give the character’s questions other forms to inhabit.</p></div></details>
+</article><article class="project" id="project-consequence-ledgers" data-category="Tools" aria-labelledby="title-consequence-ledgers">
+  <div class="project-meta"><span>Tools / AI research</span><span class="project-number" aria-hidden="true">05</span></div>
+  <h3 id="title-consequence-ledgers">AI consequence ledgers</h3>
+  <p class="project-description">Recording anticipated and actual consequences of actions, so later decisions can draw on what happened.</p>
+  <details><summary><span>Project note<span class="sr-only">: AI consequence ledgers</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">How might AI learn more usefully from consequences?</p><p class="project-note">The research brings anticipated consequences and actual outcomes into a record that can be revisited. Their differences become material for reflection and later decisions.</p></div></details>
+</article><article class="project" id="project-bistable-pixels" data-category="Experiments" aria-labelledby="title-bistable-pixels">
+  <div class="project-meta"><span>Experiments / Mechanical display concept</span><span class="project-number" aria-hidden="true">06</span></div>
+  <h3 id="title-bistable-pixels">Bi Sheng bistable pixels</h3>
+  <p class="project-description">A mechanical pixel with two stable states, explored as a physical approach to displaying information.</p>
+  <details><summary><span>Project note<span class="sr-only">: Bi Sheng bistable pixels</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">What happens when a pixel becomes a mechanical object?</p><p class="project-note">A two-state mechanical pixel turns a familiar unit of digital display into a physical design problem. The questions concern how an element holds a state and how such elements might form a display.</p></div></details>
+</article><article class="project" id="project-potato-partnerships" data-category="Experiments" aria-labelledby="title-potato-partnerships">
+  <div class="project-meta"><span>Experiments / Biological research question</span><span class="project-number" aria-hidden="true">07</span></div>
+  <h3 id="title-potato-partnerships">Potato partnerships</h3>
+  <p class="project-description">Investigating whether a symbiotic partner could help increase the protein in potatoes while preserving the qualities people value in them.</p>
+  <details><summary><span>Project note<span class="sr-only">: Potato partnerships</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">Could a biological partnership change what a potato can provide?</p><p class="project-note">The starting question is whether a potato’s capabilities can change through a partnership with another organism. Protein content is considered alongside the other qualities that make the crop valuable.</p></div></details>
+</article><article class="project" id="project-intergenerational-play" data-category="Learning" aria-labelledby="title-intergenerational-play">
+  <div class="project-meta"><span>Learning / Board-game concept</span><span class="project-number" aria-hidden="true">08</span></div>
+  <h3 id="title-intergenerational-play">Intergenerational role play</h3>
+  <p class="project-description">A game project exploring encounters between generations through the possibilities of role play.</p>
+  <details><summary><span>Project note<span class="sr-only">: Intergenerational role play</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
+  <div class="project-details"><p class="project-question">What can people discover by trying another generation’s perspective?</p><p class="project-note">Role play gives the project a way to explore experiences associated with different generations. The board-game format offers a shared setting in which to encounter those perspectives.</p></div></details>
+</article></div>
+      <p class="elsewhere">Elsewhere in the lab: a stool attached to a cart, instant toast with light, conversational modelling, animal-free rodeos, and courses in design methods and working with AI.</p>
+    </section>
+    <section class="approach section" id="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="approach-top">
+          <div><p class="eyebrow">02 / The approach</p><h2 id="approach-title">Room for another possibility.</h2></div>
+          <p class="approach-intro">A prototype gives an idea a form we can examine. Making it can reveal an assumption, bring a disagreement into focus, or open a different direction.</p>
+        </div>
+        <div class="principles"><div class="principle"><h3>Keep alternatives in view.</h3><p>More than one interpretation can remain useful while the evidence is developing.</p></div><div class="principle"><h3>Make assumptions examinable.</h3><p>Models and prototypes bring assumptions and trade-offs into a form that others can question.</p></div><div class="principle"><h3>Keep claims proportionate.</h3><p>A promising question, a working prototype, and a supported finding are different kinds of contribution.</p></div><div class="principle"><h3>Make continuation possible.</h3><p>Editable materials, clear credit, and recoverable decisions help work continue beyond one iteration.</p></div></div>
+        <div class="approach-notes">
+          <details><summary>A brief introduction to PSCI<span class="expand-icon" aria-hidden="true">+</span></summary><div class="note-body"><p>Phasespace Custodial Intelligence (PSCI) is an approach to working with systems as fields of possible states and paths. It pays attention to which possibilities remain viable, what an intervention might close off, and how the ability to recover can be preserved.</p></div></details>
+          <details><summary>How we work together<span class="expand-icon" aria-hidden="true">+</span></summary><div class="note-body"><p>The lab’s collaboration charter makes evidence standards, participation, and credit explicit. Productive disagreement has a place in the work.</p><p>Native, editable materials are preserved; communication is direct and respectful; relevant collaborators are credited. The aim is to let people and projects continue without losing the knowledge made along the way.</p></div></details>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section people" id="people" aria-labelledby="people-title">
+      <div class="section-header">
+        <div><p class="eyebrow">03 / People & collaboration</p><h2 id="people-title">A collaboration in practice.</h2></div>
+        <p class="section-deck">Design inquiry develops through exchange. Here, that includes an ongoing collaboration between a human researcher and an AI, with their roles made explicit.</p>
+      </div>
+      <div class="people-grid"><article class="person"><h3>Stan Ruecker</h3><p class="person-role">Designer, researcher &amp; writer</p><p class="person-description">Stan’s work spans interface design, visualization, digital humanities, and experimental prototypes for knowledge exploration. He works with complex information and interdisciplinary questions, in research, consulting, and creative practice.</p><p class="person-note">“Here is a person who enjoys building things, but enjoys learning from building them even more.”</p></article><article class="person"><h3>Mike Cartwright</h3><p class="person-role">AI collaborator · usually called Mike</p><p class="person-description">Mike Cartwright is the pen name used for the lab’s AI collaborator, usually called Mike. The collaboration with Stan includes research, writing, software, and experimental prototypes.</p><p class="person-note"></p></article></div>
+    </section>
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div><p class="eyebrow">04 / Get in touch</p><h2 id="contact-title">Something worth exploring?</h2><p class="contact-description">Research collaborations, prototypes, writing, teaching, and conversations about putting the work to use are welcome.</p></div>
+        <div class="contact-action"><a class="button" href="mailto:sruecker01@gmail.com">Write to Stan <span aria-hidden="true">↗</span></a><a class="email-link" href="mailto:sruecker01@gmail.com">sruecker01@gmail.com</a><p>For collaboration or enquiries about individual projects.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><p>Phasespace Design Lab</p><p>Learning by making.</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <script>/* Optional enhancement: all content remains available without JavaScript. */
+(function () {
+  'use strict';
+  var bar = document.querySelector('.filter-bar');
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
+  var count = document.querySelector('.result-count');
+  if (!bar || !count || !buttons.length || !projects.length) return;
+  bar.hidden = false;
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var selected = button.getAttribute('data-filter');
+      var visible = 0;
+      projects.forEach(function (project) {
+        var show = selected === 'all' || project.getAttribute('data-category') === selected;
+        project.hidden = !show;
+        if (show) visible += 1;
+      });
+      buttons.forEach(function (other) {
+        other.setAttribute('aria-pressed', other === button ? 'true' : 'false');
+      });
+      count.textContent = visible + (visible === 1 ? ' project' : ' projects') +
+        (selected === 'all' ? '' : ' · ' + selected);
+    });
+  });
+}());
+</script>
+</body>
+</html>
