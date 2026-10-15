@@ -73,6 +73,10 @@ h2 { font-family: var(--serif); font-size: clamp(36px, 3.55vw, 48px); letter-spa
 .project-number { font-family: var(--serif); font-size: 17px; letter-spacing: 0; font-style: italic; color: #707070; }
 .project h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; letter-spacing: -.8px; line-height: 1.2; margin-bottom: 14px; }
 .project-description { font-size: 15px; color: #535353; line-height: 1.8; max-width: 455px; margin-bottom: 16px; }
+.project-letter { margin: -2px 0 17px; font-size: 12px; line-height: 1.6; letter-spacing: .04em; }
+.project-letter a { color: #242424; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.project-letter a:hover, .project-letter a:focus-visible { text-decoration-thickness: 2px; }
+.project-letter .letter-format { color: #666; margin-left: 5px; font-size: 10px; letter-spacing: .13em; }
 summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; justify-content: space-between; gap: 15px; min-height: 34px; }
 summary::-webkit-details-marker { display: none; }
 .project summary { font-size: 12px; padding-block: 6px; }
@@ -283,6 +287,7 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   <div class="project-meta"><span>Experiments / Biological research question</span><span class="project-number" aria-hidden="true">07</span></div>
   <h3 id="title-potato-partnerships">Potato partnerships</h3>
   <p class="project-description">Investigating whether a symbiotic partner could help increase the protein in potatoes while preserving the qualities people value in them.</p>
+  <p class="project-letter"><a href="research-letters/001-potato-protein.pdf" target="_blank" rel="noopener" type="application/pdf" aria-label="Read Research Letter 001: Can We Increase Potato Protein Without Losing the Potato? (PDF)">Research Letter 001 <span aria-hidden="true">↗</span> <span class="letter-format">PDF</span></a></p>
   <details><summary><span>Project note<span class="sr-only">: Potato partnerships</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
   <div class="project-details"><p class="project-question">Could a biological partnership change what a potato can provide?</p><p class="project-note">The starting question is whether a potato’s capabilities can change through a partnership with another organism. Protein content is considered alongside the other qualities that make the crop valuable.</p></div></details>
 </article><article class="project" id="project-intergenerational-play" data-category="Learning" aria-labelledby="title-intergenerational-play">
