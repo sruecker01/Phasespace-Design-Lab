@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://phasespacedesignlab.org/sitemap.xml
