@@ -234,6 +234,15 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 .preprint-feature .preprint-links { font-size: 13px; }
 .preprints-all { margin: 22px 0 0; font-size: 13px; }
 @media (max-width: 700px) { .preprint-feature { grid-template-columns: 1fr; gap: 7px; } }
+
+/* Research fields: replace single featured preprint with three accessible routes. */
+.research-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:12px 0 16px}
+.research-field{display:flex;flex-direction:column;gap:9px;min-height:185px;padding:24px;border:1px solid var(--line);text-decoration:none;transition:border-color .15s,background .15s}
+.research-field:hover{border-color:var(--ink);background:var(--soft)}
+.research-field-title{font:400 clamp(24px,2.5vw,34px)/1.17 var(--serif);letter-spacing:-.45px}
+.research-field-note{font-size:13px;color:var(--muted);line-height:1.55}
+.research-field-link{margin-top:auto;font-size:12px;font-weight:600}
+@media(max-width:760px){.research-fields{grid-template-columns:1fr}.research-field{min-height:122px;padding:20px}}
 </style>
 </head>
 <body>
@@ -278,9 +287,9 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 <h4>Research Registries</h4><p class="registry-intro">An initial names-only directory. Fruit collections support specific research projects; Branch collections hold reusable sources and evidence.</p>
 <h4>Fruit</h4>
 <section class="registry-subgroup"><h5>Writing and design</h5><ul><li>Authorial Moves and Exemplars</li></ul></section>
-<section class="registry-subgroup"><h5>Events and social inquiry</h5><ul><li>Alternative Economies</li><li>Broken Impossibilities</li><li>Burden Removal</li><li>Ecology of Ideas</li><li>Keeping Possibilities Alive</li><li>Kissing Cases</li><li>Minimum Viable Racism</li><li>Reducing Anger</li></ul></section>
+<section class="registry-subgroup"><h5>Events and social inquiry</h5><ul><li>Alternative Economies</li><li>Broken Impossibilities</li><li>Burden Removal</li><li>Ecology of Ideas</li><li>Keeping Possibilities Alive</li><li>Kissing Cases</li><li>Minimum Viable Racism</li></ul></section>
 <section class="registry-subgroup"><h5>Crops and food</h5><ul><li>Coffee Design</li><li>Gigantic Popcorn</li><li>Moringa</li><li>Perennial Protein Crops</li></ul></section>
-<section class="registry-subgroup"><h5>Infrastructuring</h5><ul><li>Civic</li><li>Community</li><li>Commercial</li><li>Cooperative</li><li>Educational</li><li>Healthcare</li><li>Innovation diffusion</li><li>Intellectual</li><li>Open digital</li><li>Public digital</li><li>Scientific</li><li>Standards</li><li>Technical</li></ul></section>
+<section class="registry-subgroup"><h5>Infrastructuring</h5></section>
 <section class="registry-subgroup"><h5>Planetary capacity</h5><ul><li>Electricity Generation (hydroelectric and natural gas)</li><li>Watersheds (regional HydroBASINS collections)</li></ul></section>
 <section class="registry-subgroup"><h5>Projects</h5><ul><li>CPKC</li><li>Society 5.0</li></ul></section>
 <section class="registry-subgroup"><h5>Software</h5><ul><li>Simulators (biology, chemistry, medicine, metamaterials, physics)</li></ul></section>
@@ -359,15 +368,11 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
     <section class="wrap section publications" id="preprints" aria-labelledby="preprints-title">
       <div class="section-header"><div><p class="eyebrow">02 / Preprints</p><h2 id="preprints-title">Ideas in circulation.</h2></div>
       <p class="section-deck">Papers available for reading, criticism, and further development before peer review. Each has its own abstract and full text.</p></div>
-      <article class="preprint-feature">
-        <div><p class="eyebrow">Design / Preprint 001 / 2026</p>
-          <h3><a href="preprints/design-in-the-age-of-cascades/">Design in the Age of Cascades</a></h3>
-          <p>Stan Ruecker and Mike Cartwright</p>
-          <p>How transformations propagate, narrow possibilities, and create demands for recoverability in design practice.</p>
-        </div>
-        <div><p>Freely available · 10 pages · Not peer reviewed</p>
-          <p class="preprint-links"><a href="preprints/design-in-the-age-of-cascades/">Read abstract and details</a><br><a href="preprints/design-in-the-age-of-cascades/design-in-the-age-of-cascades.pdf" type="application/pdf">Read PDF</a></p></div>
-      </article>
+      <nav class="research-fields" aria-label="Browse research by field">
+<a class="research-field" href="preprints/#design"><span class="research-field-title">Design</span><span class="research-field-note">Four published preprints</span><span class="research-field-link">Browse design papers ↗</span></a>
+<a class="research-field" href="preprints/#ai"><span class="research-field-title">AI</span><span class="research-field-note">Research projects and forthcoming preprints</span><span class="research-field-link">Explore AI research ↗</span></a>
+<a class="research-field" href="preprints/#digital-humanities"><span class="research-field-title">Digital Humanities</span><span class="research-field-note">Research projects and forthcoming preprints</span><span class="research-field-link">Explore Digital Humanities ↗</span></a>
+</nav>
       <p class="preprints-all"><a href="preprints/">Browse the preprint collection ↗</a></p>
     </section>
     <section class="approach section" id="approach" aria-labelledby="approach-title">

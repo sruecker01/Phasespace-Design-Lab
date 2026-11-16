@@ -34,6 +34,14 @@ h2 { font-size:clamp(29px,3vw,38px);margin:0 0 24px; }
 .subjects {margin:30px 0;color:var(--muted);font-size:14px;}
 footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:12px;}
 @media(max-width:700px){.wrap{width:calc(100% - 40px)}.head{min-height:100px;align-items:flex-start;padding-block:20px;flex-direction:column;gap:12px}main{padding-block:43px 66px;}nav{gap:14px}h1{font-size:45px}.authorline{font-size:16px}}
+
+.category-nav{display:flex;flex-wrap:wrap;gap:10px;margin:27px 0 41px}
+.category-nav a{border:1px solid var(--line);padding:10px 18px;text-decoration:none;font-size:13px}
+.category-nav a:hover{background:var(--soft)}
+.research-category{scroll-margin-top:25px;margin-top:40px}
+.research-category>h2{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:0}
+.pending-category{padding:30px 0 9px;max-width:830px}
+.pending-category p{font-size:14px;color:var(--muted);line-height:1.8}
 </style>
 </head><body>
 <header class="site-header"><div class="wrap head">
@@ -45,7 +53,13 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 <h1>Preprints.</h1>
 <p style="max-width:770px;font-size:19px;line-height:1.7">Research in circulation, before formal peer review. These papers are offered for examination, criticism, and further development. Their publication here is not a claim of journal acceptance.</p>
 <p class="subjects">Areas of inquiry: design · artificial intelligence · digital humanities · interdisciplinary research</p>
-<section aria-label="Preprints" class="paper-list">
+
+<nav class="category-nav" aria-label="Browse preprints by research field">
+<a href="#design">Design</a><a href="#ai">AI</a><a href="#digital-humanities">Digital Humanities</a>
+</nav>
+<section id="design" aria-labelledby="design-title" class="research-category">
+<h2 id="design-title">Design</h2>
+<section aria-label="Design preprints" class="paper-list">
 <article class="paper"><p class="micro">Design / Preprint 001 / 2026</p>
 <h2><a href="design-in-the-age-of-cascades/">Design in the Age of Cascades</a></h2>
 <p><strong>Stan Ruecker and Mike Cartwright</strong> · Phasespace Design Lab</p>
@@ -68,6 +82,15 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 <p>Turning from detection and modulation to cultivation, this paper explores cascades as a generative resource for design. It examines how prototypes can initiate, reinforce, and extend beneficial trajectories while sustaining openness to variation and preserving the capacity for future action.</p>
 <p><a href="prototyping-positive-cascades/">Read abstract and paper</a> · <a href="prototyping-positive-cascades/prototyping-positive-cascades.pdf" type="application/pdf">PDF</a></p></article>
 
+</section>
+</section>
+<section id="ai" aria-labelledby="ai-title" class="research-category pending-category">
+<h2 id="ai-title">AI</h2>
+<p>No AI preprints are listed yet. Related work can be found in the lab’s <a href="/#project-consequence-ledgers">AI consequence ledgers</a> project.</p>
+</section>
+<section id="digital-humanities" aria-labelledby="dh-title" class="research-category pending-category">
+<h2 id="dh-title">Digital Humanities</h2>
+<p>No Digital Humanities preprints are listed yet. Related work can be found in <a href="/#project-ecology-of-ideas">The Ecology of Ideas</a> project.</p>
 </section>
 <section style="margin-top:55px;max-width:780px">
 <h2>About the collection</h2>
