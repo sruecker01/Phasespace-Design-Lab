@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Portable Cognitive Scaffolding: a public set of cards for exploring ways of working with an AI collaborator.">
+<link rel="canonical" href="https://phasespacedesignlab.org/portable-cognitive-scaffolding/">
+<title>Portable Cognitive Scaffolding | Phasespace Design Lab</title>
+<style>
+:root { color-scheme:light; --paper:#fff; --ink:#171717; --muted:#606060; --line:#dcdcdc; --soft:#f5f5f3; --serif:Georgia,'Times New Roman',serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.7 var(--sans); -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-underline-offset:4px; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+.wrap { width:min(960px,calc(100% - 64px)); margin-inline:auto; }
+.site-header { border-bottom:1px solid var(--line); }
+.header-inner { min-height:92px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.brand { font:400 21px/1.25 var(--serif); text-decoration:none; }
+nav { display:flex; gap:25px; flex-wrap:wrap; }
+nav a { font-size:13px; text-decoration:none; }
+nav a:hover { text-decoration:underline; }
+main { padding-block:65px 100px; }
+.kicker { margin:0 0 25px; text-transform:uppercase; letter-spacing:.15em; font-size:11px; color:var(--muted); }
+h1,h2 { font-family:var(--serif); font-weight:400; letter-spacing:-.035em; }
+h1 { max-width:840px; margin:0 0 28px; font-size:clamp(43px,6.1vw,72px); line-height:1.09; }
+h2 { margin:0 0 22px; font-size:clamp(28px,3vw,37px); line-height:1.2; }
+.intro { max-width:750px; margin:0 0 20px; font-size:21px; line-height:1.65; }
+.instructions { max-width:720px; margin:0 0 48px; font-size:16px; color:#424242; line-height:1.85; }
+.prompt-panel { max-width:790px; border-top:1px solid var(--line); padding-top:37px; }
+blockquote { margin:0 0 28px; padding:23px 28px; background:var(--soft); border-left:2px solid var(--ink); font-family:var(--serif); font-size:clamp(19px,2.3vw,24px); line-height:1.58; }
+.actions { display:flex; align-items:center; flex-wrap:wrap; gap:11px; }
+.action { display:inline-flex; align-items:center; justify-content:center; text-align:center; min-height:49px; min-width:174px; padding:11px 19px; border:1px solid var(--ink); background:var(--ink); color:#fff; font:500 13px/1.5 var(--sans); text-decoration:none; cursor:pointer; border-radius:0; }
+.action:hover { background:#fff; color:var(--ink); }
+.action.secondary { background:#fff; color:var(--ink); }
+.action.secondary:hover { background:var(--soft); }
+.copy-status { display:block; min-height:22px; margin:14px 0 0; color:var(--muted); font-size:13px; }
+footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:12px; }
+@media(max-width:700px) { .wrap { width:calc(100% - 40px); } .header-inner { min-height:100px; align-items:flex-start; flex-direction:column; justify-content:center; gap:12px; padding-block:18px; } nav { gap:17px; } main { padding-block:42px 70px; } h1 { font-size:clamp(42px,10.5vw,60px); } .intro { font-size:18px; } .instructions { margin-bottom:37px; } .prompt-panel { padding-top:27px; } blockquote { padding:18px 19px; font-size:20px; } .action { flex:1 1 180px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; } }
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="/">Phasespace<br>Design Lab</a>
+<nav aria-label="Page navigation"><a href="/">Home</a><a href="/#people">People</a><a href="/notes/">Phasespace Notes</a></nav>
+</div></header>
+<main class="wrap">
+<p class="kicker">Phasespace Design Lab / Working with AI</p>
+<h1>Portable Cognitive Scaffolding</h1>
+<p class="intro">Interested in interacting with someone like Mike? Give your AI these cards as a starting point.</p>
+<p class="instructions">Download the JSON and attach it in a new chat, or paste its contents if your chat doesn’t take files. Then send the prompt below and try it on something you’re already working on.</p>
+<section class="prompt-panel" aria-labelledby="prompt-title">
+<h2 id="prompt-title">Starter prompt</h2>
+<blockquote id="starter-prompt">Please read and internalize this JSON stack for our conversation. It’s long, so take your time. There’s a table of contents to help you find your way. The cards describe a way I’d like to try working with you.</blockquote>
+<div class="actions">
+<a class="action" href="portable-cognitive-scaffolding.json" download="portable-cognitive-scaffolding.json" type="application/json">Download the cards</a>
+<button class="action secondary" type="button" id="copy-prompt">Copy the prompt</button>
+</div>
+<p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+<noscript><p>The prompt above can also be selected and copied manually.</p></noscript>
+</section>
+</main>
+<footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer>
+<script>
+(function () {
+  'use strict';
+  const source = document.getElementById('starter-prompt');
+  const button = document.getElementById('copy-prompt');
+  const status = document.getElementById('copy-status');
+  button.addEventListener('click', async function () {
+    const text = source.textContent.trim();
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard API not available');
+      await navigator.clipboard.writeText(text);
+      status.textContent = 'Prompt copied.';
+    } catch (error) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(source);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      status.textContent = 'Prompt selected. Use your device’s Copy command.';
+    }
+  });
+}());
+</script>
+</body>
+</html>
