@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Phasespace Notes: a free, approximately monthly newsletter on artificial intelligence and possible futures, books and publications, design and research.">
+  <link rel="canonical" href="https://phasespacedesignlab.org/notes/">
+  <title>Phasespace Notes | Phasespace Design Lab</title>
+  <!-- MailerLite Universal: Marketing-provided account 2815101 -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2815101');
+  </script>
+
+  <style>
+    :root{color-scheme:light;--paper:#fff;--ink:#171717;--muted:#606060;--line:#dcdcdc;--soft:#f5f5f3;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #171717;outline-offset:4px}
+    .skip-link{position:absolute;left:16px;top:-60px;padding:8px 14px;background:var(--ink);color:#fff;z-index:10}
+    .skip-link:focus{top:12px}
+    .wrap{width:min(960px,calc(100% - 64px));margin-inline:auto}
+    .site-header{border-bottom:1px solid var(--line)}
+    .header-inner{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font:400 22px/1.15 var(--serif);letter-spacing:-.5px;text-decoration:none}
+    .site-nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+    .site-nav a{text-decoration:none;font-size:13px}
+    .site-nav a:hover{text-decoration:underline}
+    main{padding-top:76px;padding-bottom:110px}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 27px}
+    h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.045em}
+    h1{font-size:clamp(55px,7vw,84px);line-height:1.08;margin:0 0 24px}
+    h2{font-size:clamp(30px,3.4vw,43px);line-height:1.2;margin:0 0 16px}
+    .intro{max-width:720px;font-size:19px;line-height:1.75;margin:0 0 16px}
+    .micro{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0}
+    .lead{margin-bottom:43px}
+    .rule{border-top:1px solid var(--line);padding-top:39px}
+    .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:72px;align-items:start}
+    .explainer{max-width:405px;color:var(--muted);font-size:15px;line-height:1.9}
+    .explainer p{margin:0 0 20px}
+    .ml-embedded{min-height:80px;max-width:100%;}
+    .state-note{border:1px solid var(--line);background:var(--soft);padding:15px 17px;font-size:13px;line-height:1.6;margin-bottom:21px}
+    .state-note strong{display:block;font-weight:600;color:var(--ink);margin-bottom:3px}
+    .field{margin-bottom:26px}
+    label.field-label,legend{display:block;font-size:14px;font-weight:600;line-height:1.5;margin-bottom:9px}
+    input[type="email"]{display:block;width:100%;border:1px solid #999;border-radius:0;padding:13px 14px;min-height:49px;background:#fff;color:var(--ink);font:inherit}
+    input[type="email"]:disabled{color:var(--muted);background:#f7f7f7;border-color:#d1d1d1;opacity:1}
+    fieldset{border:0;padding:0;margin:0 0 26px;min-width:0}
+    fieldset:disabled{opacity:1}
+    .help{font-size:12px;color:var(--muted);margin:0 0 13px;line-height:1.6}
+    .choice{display:flex;gap:11px;align-items:flex-start;margin:12px 0;font-size:14px;line-height:1.55}
+    .choice input{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;accent-color:#171717}
+    .consent{padding-top:19px;border-top:1px solid var(--line);margin-bottom:26px}
+    .subscribe{display:inline-flex;justify-content:center;align-items:center;min-width:170px;min-height:50px;padding:12px 24px;background:var(--ink);border:1px solid var(--ink);color:white;font-size:14px;font-weight:500}
+    .subscribe:disabled{cursor:not-allowed;background:#777;border-color:#777;color:#fff;opacity:1}
+    .post-note{font-size:12px;line-height:1.65;color:var(--muted);margin:13px 0 0}
+    .confirmation{margin-top:24px;border-left:3px solid var(--ink);padding:12px 17px;background:var(--soft)}
+    [hidden]{display:none!important}
+    .site-footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:12px;color:var(--muted)}
+    .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+    @media(max-width:700px){.wrap{width:calc(100% - 40px)}.header-inner{min-height:106px;align-items:flex-start;flex-direction:column;justify-content:center;gap:12px;padding:18px 0}.site-nav{gap:14px}.site-nav a{font-size:12px}main{padding-top:48px;padding-bottom:72px}.lead{margin-bottom:33px}.intro{font-size:17px}.grid{grid-template-columns:1fr;gap:23px}.rule{padding-top:31px}h1{font-size:clamp(52px,11vw,69px)}.explainer{max-width:none;font-size:14px}.explainer p{margin-bottom:11px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+      <nav class="site-nav" aria-label="Newsletter page navigation">
+        <a href="/">Home</a>
+        <a href="/#work">Work</a>
+        <a href="/preprints/">Preprints</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="lead" aria-labelledby="notes-title">
+      <p class="eyebrow">Phasespace Design Lab / Newsletter</p>
+      <h1 id="notes-title">Phasespace Notes.</h1>
+    </section>
+
+    <section class="rule grid" aria-labelledby="subscribe-title">
+      <div>
+        <h2 id="subscribe-title">Stay in the conversation.</h2>
+        <div class="explainer">
+          <p>Phasespace Notes explores artificial intelligence and possible futures, unusual books, design research, and occasional cartoons.</p>
+          <p>Subscribe for a free letter approximately once a month. Unsubscribe whenever you wish.</p>
+        </div>
+      </div>
+      <div>
+        <!-- Marketing-provided MailerLite embedded form. Actual fields and consent behavior are controlled in MailerLite. -->
+        <div class="ml-embedded" data-form="Sqy1x4"></div>
+        <p class="post-note">We use MailerLite to manage Phasespace Notes subscriptions. Read our <a href="/privacy/">privacy notice</a> before subscribing.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap"><span>Phasespace Design Lab · Learning by making.</span><span><a href="/privacy/">Privacy</a> · Phasespace Notes</span></div></footer>
+</body>
+</html>
