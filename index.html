@@ -218,11 +218,11 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 /* Phasespace preprints collection: styling aligned with site typography. */
 /* Names-only Research Registries index inside the existing RegistryMaker entry. */
 .registry-inventory{border-top:1px solid var(--line);margin-top:22px;padding-top:18px}
-.registry-inventory h4{font:400 22px/1.25 var(--serif);margin:0 0 12px}
-.registry-inventory h5{font-size:13px;line-height:1.4;letter-spacing:.03em;margin:17px 0 5px}
-.registry-inventory .registry-intro{font-size:13px;line-height:1.65;color:var(--muted);margin:10px 0 14px}
-.registry-inventory ul{padding-left:18px;margin:0 0 10px;font-size:13px;line-height:1.65}
-.registry-inventory li{margin-bottom:3px}
+.registry-inventory h4{font:400 22px/1.25 var(--serif);margin:0 0 10px}
+.registry-inventory h5{font-size:13px;line-height:1.4;letter-spacing:.03em;margin:12px 0 4px}
+.registry-inventory .registry-intro{font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0 14px}
+.registry-inventory ul{padding-left:18px;margin:0 0 8px;font-size:13px;line-height:1.5}
+.registry-inventory li{margin-bottom:1px}
 .registry-inventory .registry-contact{font-size:13px;font-weight:600;margin-top:22px}
 
 .publications { border-top: 1px solid var(--line); }
@@ -249,21 +249,22 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 .lab-directory {
   display: grid;
   grid-template-columns: 1.18fr 1fr;
-  gap: 32px 76px;
+  gap: 20px 56px;
   align-items: start;
   max-width: none;
-  padding-bottom: 32px;
+  padding-bottom: 20px;
 }
-.lab-directory h2 { margin: 0 0 8px; font: 600 11px/1.6 var(--sans); letter-spacing: 1.4px; text-transform: uppercase; }
+.lab-directory h2 { margin: 0 0 5px; font: 600 11px/1.45 var(--sans); letter-spacing: 1.4px; text-transform: uppercase; }
 .directory-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 16px; margin: 0; padding: 0; list-style: none; }
 .lab-directory .directory-links a {
   display: flex;
   align-items: center;
   min-height: 44px;
   margin: 0;
-  padding: 8px 0;
+  padding: 7px 0;
   border-top: 1px solid var(--line);
   font-size: 14px;
+  line-height: 1.4;
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
@@ -281,7 +282,7 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   .menu-jump { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; font-size: 14px; }
 }
 @media (max-width: 700px) {
-  .lab-directory { grid-template-columns: 1fr; gap: 20px; padding-bottom: 24px; }
+  .lab-directory { grid-template-columns: 1fr; gap: 12px; padding-bottom: 14px; }
   .directory-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-related { margin: -8px 0 20px; }
   .course-list { grid-template-columns: 1fr; gap: 22px; }
@@ -312,7 +313,7 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
         <a class="button" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
       </div>
     </section>
-    <nav class="wrap lab-directory" id="lab-directory" tabindex="-1" aria-label="Lab directory">
+    <nav class="wrap lab-directory" id="lab-directory" aria-label="Lab directory">
       <div>
         <h2>Explore the lab</h2>
         <ul class="directory-links">
