@@ -277,7 +277,59 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 .course-list p { margin: 0; font-size: 15px; color: var(--muted); }
 .course-list em { display: block; margin-top: 8px; }
 .course-more { margin-top: 12px !important; font-size: 12px !important; }
-.course-more a { text-underline-offset: 4px; }
+/* Compact homepage update strip. */
+.recent-updates {
+  padding: 28px 0 34px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.recent-heading { margin-bottom: 16px; }
+.recent-heading h2 {
+  margin: 0;
+  font: 600 10px/1.5 var(--sans);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+.recent-item {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.recent-date {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.recent-item h3 {
+  margin: 0 0 8px;
+  font: 400 23px/1.2 var(--serif);
+  letter-spacing: -.5px;
+}
+.recent-item p:last-child {
+  max-width: 350px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.recent-item a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.recent-item a:hover { text-decoration-thickness: 2px; }
+@media (max-width: 700px) {
+  .recent-updates { padding: 25px 0 29px; }
+  .recent-grid { grid-template-columns: 1fr; gap: 16px; }
+  .recent-item { padding-top: 10px; }
+  .recent-item h3 { font-size: 21px; }
+}
 @media (max-width: 1020px) { .lab-directory { column-gap: 40px; } }
 @media (max-width: 850px) {
   .header-nav { display: none; }
@@ -349,6 +401,26 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
       </div>
     </nav>
     <div class="wrap hero-foot"><span>Research through design</span><span>Ideas made examinable</span></div>
+    <section class="wrap recent-updates" aria-labelledby="recent-title">
+      <div class="recent-heading"><h2 id="recent-title">Recently added</h2></div>
+      <div class="recent-grid">
+        <article class="recent-item">
+          <p class="recent-date">24 November 2026</p>
+          <h3><a href="software/">Software</a></h3>
+          <p>Five systems and prototypes, from research registries to conversation modeling.</p>
+        </article>
+        <article class="recent-item">
+          <p class="recent-date">24 November 2026</p>
+          <h3><a href="courses/design-methods-studio/">Design Methods Studio</a></h3>
+          <p>A modular, licensable canon of more than 30 design methods for teaching human-centered design.</p>
+        </article>
+        <article class="recent-item">
+          <p class="recent-date">24 November 2026</p>
+          <h3><a href="#project-atry">Atry’s World</a></h3>
+          <p>Two selected cartoons explore models, hypotheses, and confounding variables.</p>
+        </article>
+      </div>
+    </section>
     <section class="wrap section work" id="work" aria-labelledby="work-title">
       <div class="section-header">
         <div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Questions taking shape.</h2></div>
