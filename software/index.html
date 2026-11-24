@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Software and research prototypes developed and used by Phasespace Design Lab.">
+<link rel="canonical" href="https://phasespacedesignlab.org/software/">
+<title>Software | Phasespace Design Lab</title>
+<style>
+:root{color-scheme:light;--paper:#fff;--ink:#171717;--muted:#606060;--line:#dcdcdc;--soft:#f5f5f3;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.wrap{width:min(960px,calc(100% - 64px));margin-inline:auto}
+.site-header{border-bottom:1px solid var(--line)}
+.header-inner{min-height:92px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.brand{font:400 21px/1.25 var(--serif);text-decoration:none;flex:0 0 auto}
+.page-nav{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:flex-end}
+.page-nav a{font-size:12px;text-decoration:none}
+.page-nav a:hover{text-decoration:underline}
+main{padding:65px 0 100px}
+.kicker{margin:0 0 24px;text-transform:uppercase;letter-spacing:.15em;font-size:11px;color:var(--muted)}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.035em}
+h1{font-size:clamp(48px,7vw,76px);line-height:1.08;margin:0 0 24px}
+.intro{max-width:700px;font-size:18px;line-height:1.75;color:var(--muted);margin:0 0 48px}
+.software-list{border-top:1px solid var(--line)}
+.software-item{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;padding:34px 0;border-bottom:1px solid var(--line)}
+.software-item.no-image{grid-template-columns:1fr}
+.software-copy{min-width:0}
+.status{margin:0 0 12px;color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+h2{font-size:clamp(28px,3.4vw,39px);line-height:1.18;margin:0 0 13px}
+.description{font-size:15px;line-height:1.8;max-width:620px;margin:0}
+.support-note{font-size:13px;color:var(--muted);margin:12px 0 0}
+.software-item a.title-link{text-decoration-thickness:1px}
+figure{margin:0;min-width:0}
+figure a{display:block;line-height:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+figcaption{font-size:12px;color:var(--muted);line-height:1.6;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:12px}
+@media(max-width:700px){
+ .wrap{width:calc(100% - 40px)}
+ .header-inner{min-height:100px;align-items:flex-start;flex-direction:column;justify-content:center;gap:12px;padding-block:18px}
+ .page-nav{gap:12px 16px;justify-content:flex-start}
+ main{padding:42px 0 68px}
+ h1{font-size:clamp(44px,10vw,60px)}
+ .intro{font-size:16px;margin-bottom:32px}
+ .software-item,.software-item.no-image{grid-template-columns:1fr;gap:20px;padding:27px 0}
+ h2{font-size:31px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+ <div class="wrap header-inner">
+  <a class="brand" href="/">Phasespace<br>Design Lab</a>
+  <nav class="page-nav" aria-label="Page navigation">
+   <a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/inventions/">Inventions</a><a href="/notes/">Newsletter</a>
+  </nav>
+ </div>
+</header>
+<main class="wrap">
+ <p class="kicker">Phasespace Design Lab / Research instruments</p>
+ <h1>Software</h1>
+ <p class="intro">Working systems and research prototypes developed or used in the lab. Each entry identifies what the software does and the stage it has reached.</p>
+ <section class="software-list" aria-label="Software projects">
+
+  <article class="software-item no-image" id="registrymaker">
+   <div class="software-copy">
+    <p class="status">Used in the lab</p>
+    <h2><a class="title-link" href="/#project-registrymaker">RegistryMaker</a></h2>
+    <p class="description">See the existing Work entry for its description and project note.</p>
+   </div>
+  </article>
+
+  <article class="software-item no-image" id="temporal-congestion-mapping">
+   <div class="software-copy">
+    <p class="status">Research prototype</p>
+    <h2>Temporal Congestion Mapping</h2>
+    <p class="description">Maps role occupancy and individual trajectories over time, making role turnover and the persistence of broader domains visible.</p>
+   </div>
+  </article>
+
+  <article class="software-item" id="conversation-modeling">
+   <div class="software-copy">
+    <p class="status">Working research prototype</p>
+    <h2>Conversation Modeling</h2>
+    <p class="description">Visualizes branching, correction, amplification, and shifts between levels of inquiry within coded conversations.</p>
+   </div>
+   <figure>
+    <a href="/images/work/conversation-modeling.png" aria-label="View full-size Conversational Topology Viewer screenshot">
+     <img src="/images/work/conversation-modeling.png" width="1429" height="751" loading="lazy" decoding="async" alt="Conversational Topology Viewer showing a network of conversation nodes and links, with a selected node's details in the inspector.">
+    </a>
+    <figcaption>Conversational Topology Viewer: a local prototype for examining conversation structure.</figcaption>
+   </figure>
+  </article>
+
+  <article class="software-item no-image" id="email-decision-support">
+   <div class="software-copy">
+    <p class="status">Research prototype</p>
+    <h2>Email Decision Support</h2>
+    <p class="description">Turns incoming requests into a decision queue, helping a reviewer choose YES, NO, INFO NEEDED, or REDIRECT while retaining the original email as evidence.</p>
+    <p class="support-note">Responses are prepared for human review; the system does not send them automatically.</p>
+   </div>
+  </article>
+
+  <article class="software-item no-image" id="mikebench-donkey">
+   <div class="software-copy">
+    <p class="status">Used in the lab · Internal systems</p>
+    <h2>Mikebench + Donkey</h2>
+    <p class="description">A paired lab system for generating, testing, and repairing software projects.</p>
+   </div>
+  </article>
+
+ </section>
+</main>
+<footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer>
+</body>
+</html>
