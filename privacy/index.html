@@ -15,8 +15,21 @@
     .brand{font:400 22px/1.2 var(--serif);text-decoration:none}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:13px;text-decoration:none}
     main{padding:65px 0 85px}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.035em;line-height:1.2}h1{font-size:clamp(48px,7vw,75px);margin:18px 0 34px}h2{font-size:28px;margin:38px 0 12px}p{margin:0 0 18px}footer{border-top:1px solid var(--line);padding:28px 0;font-size:12px;color:var(--muted)}
   </style>
+<link rel="stylesheet" href="/assets/site-navigation.css">
 </head><body>
-<header class="site-header"><div class="wrap head"><a class="brand" href="/">Phasespace<br>Design Lab</a><nav aria-label="Page navigation"><a href="/">Home</a><a href="/notes/">Phasespace Notes</a></nav></div></header>
+<header class="lab-site-header" id="lab-site-top">
+  <div class="lab-site-bar">
+    <a class="lab-site-brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+    <nav class="lab-site-desktop" aria-label="Main navigation">
+      <div class="lab-site-row"><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a></div>
+      <div class="lab-site-row"><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></div>
+    </nav>
+    <details class="lab-site-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></nav>
+    </details>
+  </div>
+</header>
 <main class="wrap"><p class="kicker">Phasespace Design Lab</p><h1>Privacy.</h1>
 <p>This notice describes how Phasespace Design Lab handles information submitted through the Phasespace Notes newsletter form. It does not describe every aspect of the third-party services that may operate the wider website.</p>
 <h2>Newsletter subscriptions</h2>
@@ -32,4 +45,4 @@
 <p>For details of the provider’s own data-handling practices, please consult <a href="https://www.mailerlite.com/legal/privacy-policy">MailerLite’s privacy policy</a>.</p>
 <h2>Questions</h2>
 <p>Questions about the laboratory’s handling of newsletter information can be sent to <a href="mailto:contact@phasespacedesignlab.org">contact@phasespacedesignlab.org</a>.</p>
-</main><footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer></body></html>
+</main><footer class="lab-site-footer"><div class="lab-site-footer-inner"><span>Phasespace Design Lab · Learning by making.</span><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/notes/">Newsletter</a><a href="/#contact">Contact</a><a href="/privacy/" aria-current="page">Privacy</a><a href="#lab-site-top">Back to top</a></nav></div></footer></body></html>

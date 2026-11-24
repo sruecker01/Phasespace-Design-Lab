@@ -1,0 +1,34 @@
+/* Shared navigation for secondary pages. Page content retains its own stylesheet. */
+.lab-site-header,.lab-site-footer{box-sizing:border-box;color:#171717;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;border:0}
+.lab-site-header{border-bottom:1px solid #dcdcdc}
+.lab-site-bar,.lab-site-footer-inner{box-sizing:border-box;width:min(960px,calc(100% - 64px));margin-inline:auto}
+.lab-site-bar{display:flex;align-items:center;justify-content:space-between;gap:32px;min-height:92px;padding:12px 0}
+.lab-site-header .lab-site-brand{flex:none;color:#171717;font:400 21px/1.22 Georgia,'Times New Roman',serif;letter-spacing:-.4px;text-decoration:none;display:inline-block}
+.lab-site-header .lab-site-desktop{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:0}
+.lab-site-header .lab-site-row{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:0 18px}
+.lab-site-header nav a,.lab-site-footer nav a{font-size:13px;line-height:1.35;text-decoration:none;color:inherit;display:inline-flex;align-items:center;min-height:30px;white-space:nowrap}
+.lab-site-header nav a:hover,.lab-site-footer nav a:hover,.lab-site-header nav a[aria-current="page"],.lab-site-footer nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
+.lab-site-header .lab-site-menu{display:none}
+.lab-site-header a:focus-visible,.lab-site-header summary:focus-visible,.lab-site-footer a:focus-visible{outline:2px solid #171717;outline-offset:4px}
+.lab-site-footer{border-top:1px solid #dcdcdc;padding:22px 0 32px;color:#606060;font-size:12px;line-height:1.5}
+.lab-site-footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px}
+.lab-site-footer nav{display:flex;flex-wrap:wrap;gap:0 18px;align-items:center}
+.lab-site-footer nav a{font-size:12px}
+@media(max-width:850px){
+ .lab-site-bar,.lab-site-footer-inner{width:calc(100% - 40px)}
+ .lab-site-bar{position:relative;display:block;min-height:76px;padding:12px 0}
+ .lab-site-header .lab-site-brand{position:absolute;left:0;top:12px}
+ .lab-site-header .lab-site-desktop{display:none}
+ .lab-site-header .lab-site-menu{display:block;min-height:51px;margin:0;padding:0;border:0}
+ .lab-site-header .lab-site-menu summary{box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;min-height:44px;margin:0 0 0 auto;padding:0 2px 0 14px;cursor:pointer;list-style:none;font-size:14px;line-height:1.3;color:#171717}
+ .lab-site-header .lab-site-menu summary::-webkit-details-marker{display:none}
+ .lab-site-header .lab-site-menu summary::after{content:'+';font-size:21px;font-weight:400;line-height:1}
+ .lab-site-header .lab-site-menu[open] summary::after{content:'−'}
+ .lab-site-header .lab-site-menu nav{display:none}
+ .lab-site-header .lab-site-menu[open] nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin-top:17px;padding:0 0 4px}
+ .lab-site-header .lab-site-menu nav a{min-height:44px;border-top:1px solid #dcdcdc;font-size:15px;white-space:normal}
+ .lab-site-footer{padding:20px 0 26px}
+ .lab-site-footer-inner{align-items:flex-start;gap:6px 24px}
+ .lab-site-footer nav{gap:0 16px}
+ .lab-site-footer nav a{min-height:44px}
+}

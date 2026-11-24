@@ -43,11 +43,21 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 .pending-category{padding:30px 0 9px;max-width:830px}
 .pending-category p{font-size:14px;color:var(--muted);line-height:1.8}
 </style>
+<link rel="stylesheet" href="/assets/site-navigation.css">
 </head><body>
-<header class="site-header"><div class="wrap head">
-<a class="brand" href="/">Phasespace<br>Design Lab</a>
-<nav aria-label="Preprints navigation"><a href="/">Home</a><a href="/preprints/">All preprints</a><a href="/#work">Work</a></nav>
-</div></header>
+<header class="lab-site-header" id="lab-site-top">
+  <div class="lab-site-bar">
+    <a class="lab-site-brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+    <nav class="lab-site-desktop" aria-label="Main navigation">
+      <div class="lab-site-row"><a href="/#work">Work</a><a href="/preprints/" aria-current="page">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a></div>
+      <div class="lab-site-row"><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></div>
+    </nav>
+    <details class="lab-site-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/" aria-current="page">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></nav>
+    </details>
+  </div>
+</header>
 <main class="wrap">
 <p class="kicker">Phasespace Design Lab / Research</p>
 <h1>Preprints.</h1>
@@ -86,7 +96,7 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 </section>
 <section id="ai" aria-labelledby="ai-title" class="research-category pending-category">
 <h2 id="ai-title">AI</h2>
-<p>No AI preprints are listed yet. Related work can be found in the lab’s <a href="/#project-consequence-ledgers">AI consequence ledgers</a> project.</p>
+<p>No AI preprints are listed yet. Related work can be found on the lab’s <a href="/software/">Software</a> page.</p>
 </section>
 <section id="digital-humanities" aria-labelledby="dh-title" class="research-category">
 <h2 id="dh-title">Digital Humanities</h2>
@@ -115,5 +125,5 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 <p>Authorship recognizes substantive intellectual contributions to research, including conceptualization, design, implementation, experimentation, analysis, and interpretation. Writing is one form of contribution, but not a prerequisite for recognition as an author. All named authors have had the opportunity to review and approve the work before publication.</p>
 <p class="note">The papers are preprints. Editorial work is limited to identifiable corrections and publication requirements, rather than rewriting authors’ arguments or voice. This collection is separate from the lab’s short Research Letters.</p>
 </section>
-</main><footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer>
+</main><footer class="lab-site-footer"><div class="lab-site-footer-inner"><span>Phasespace Design Lab · Learning by making.</span><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/notes/">Newsletter</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="#lab-site-top">Back to top</a></nav></div></footer>
 </body></html>

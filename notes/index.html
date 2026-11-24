@@ -66,20 +66,23 @@
     @media(max-width:700px){.wrap{width:calc(100% - 40px)}.header-inner{min-height:106px;align-items:flex-start;flex-direction:column;justify-content:center;gap:12px;padding:18px 0}.site-nav{gap:14px}.site-nav a{font-size:12px}main{padding-top:48px;padding-bottom:72px}.lead{margin-bottom:33px}.intro{font-size:17px}.grid{grid-template-columns:1fr;gap:23px}.rule{padding-top:31px}h1{font-size:clamp(52px,11vw,69px)}.explainer{max-width:none;font-size:14px}.explainer p{margin-bottom:11px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
+<link rel="stylesheet" href="/assets/site-navigation.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
-      <nav class="site-nav" aria-label="Newsletter page navigation">
-        <a href="/">Home</a>
-        <a href="/#work">Work</a>
-        <a href="/preprints/">Preprints</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <header class="lab-site-header" id="lab-site-top">
+  <div class="lab-site-bar">
+    <a class="lab-site-brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+    <nav class="lab-site-desktop" aria-label="Main navigation">
+      <div class="lab-site-row"><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/" aria-current="page">Newsletter</a></div>
+      <div class="lab-site-row"><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></div>
+    </nav>
+    <details class="lab-site-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/" aria-current="page">Newsletter</a><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></nav>
+    </details>
+  </div>
+</header>
 
   <main id="main" class="wrap">
     <section class="lead" aria-labelledby="notes-title">
@@ -102,6 +105,6 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap"><span>Phasespace Design Lab · Learning by making.</span><span><a href="/privacy/">Privacy</a> · Phasespace Notes</span></div></footer>
+  <footer class="lab-site-footer"><div class="lab-site-footer-inner"><span>Phasespace Design Lab · Learning by making.</span><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/notes/" aria-current="page">Newsletter</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="#lab-site-top">Back to top</a></nav></div></footer>
 </body>
 </html>

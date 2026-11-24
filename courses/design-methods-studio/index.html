@@ -59,15 +59,21 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
  .adoption-card{min-height:0}
 }
 </style>
+<link rel="stylesheet" href="/assets/site-navigation.css">
 </head>
 <body>
-<header class="site-header">
- <div class="wrap header-inner">
-  <a class="brand" href="/">Phasespace<br>Design Lab</a>
-  <nav class="page-nav" aria-label="Page navigation">
-   <a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/inventions/">Inventions</a><a href="/notes/">Newsletter</a>
-  </nav>
- </div>
+<header class="lab-site-header" id="lab-site-top">
+  <div class="lab-site-bar">
+    <a class="lab-site-brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+    <nav class="lab-site-desktop" aria-label="Main navigation">
+      <div class="lab-site-row"><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a></div>
+      <div class="lab-site-row"><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></div>
+    </nav>
+    <details class="lab-site-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></nav>
+    </details>
+  </div>
 </header>
 <main class="wrap">
  <p class="kicker">Phasespace Design Lab / Teaching</p>
@@ -136,6 +142,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
   </div>
  </section>
 </main>
-<footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer>
+<footer class="lab-site-footer"><div class="lab-site-footer-inner"><span>Phasespace Design Lab · Learning by making.</span><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/notes/">Newsletter</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="#lab-site-top">Back to top</a></nav></div></footer>
 </body>
 </html>

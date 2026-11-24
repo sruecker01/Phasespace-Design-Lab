@@ -43,11 +43,21 @@ h2 { font-size:clamp(29px,3vw,38px);margin:0 0 24px; }
 footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:12px;}
 @media(max-width:700px){.wrap{width:calc(100% - 40px)}.head{min-height:100px;align-items:flex-start;padding-block:20px;flex-direction:column;gap:12px}main{padding-block:43px 66px;}nav{gap:14px}h1{font-size:45px}.authorline{font-size:16px}}
 </style>
+<link rel="stylesheet" href="/assets/site-navigation.css">
 </head><body>
-<header class="site-header"><div class="wrap head">
-<a class="brand" href="/">Phasespace<br>Design Lab</a>
-<nav aria-label="Preprints navigation"><a href="/">Home</a><a href="/preprints/">All preprints</a><a href="/#work">Work</a></nav>
-</div></header>
+<header class="lab-site-header" id="lab-site-top">
+  <div class="lab-site-bar">
+    <a class="lab-site-brand" href="/" aria-label="Phasespace Design Lab home">Phasespace<br>Design Lab</a>
+    <nav class="lab-site-desktop" aria-label="Main navigation">
+      <div class="lab-site-row"><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a></div>
+      <div class="lab-site-row"><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></div>
+    </nav>
+    <details class="lab-site-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a href="/preprints/">Preprints</a><a href="/research-registries/">Registries</a><a href="/software/">Software</a><a href="/books/">Books</a><a href="/#courses">Courses</a><a href="/notes/">Newsletter</a><a href="/inventions/">Inventions</a><a href="/#approach">Approach</a><a href="/#people">People</a><a href="/#contact">Contact</a></nav>
+    </details>
+  </div>
+</header>
 <main class="wrap">
 <p class="kicker">Phasespace Preprints / Digital Humanities / Research Paper 03 / Preprint 007</p>
 <h1>Debt, Aspiration, and Retrospective Reconfiguration: How Actions Reshape Possibility in “The Necklace”</h1>
@@ -61,5 +71,5 @@ footer {border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);
 <p class="note">Version 1.1 (19 November 2026) marks the two event-record positions discussed in Figure 1. The analytical scores, surrounding prose, and conceptual interpretation are unchanged. The <a href="research-paper-03-the-necklace-v1.0.pdf" type="application/pdf">original version 1.0 PDF</a> remains available.</p>
 <p class="note">This paper is shared as a preprint before formal peer review.</p>
 <p><a href="/preprints/">← Back to all preprints</a></p>
-</main><footer><div class="wrap">Phasespace Design Lab · Learning by making.</div></footer>
+</main><footer class="lab-site-footer"><div class="lab-site-footer-inner"><span>Phasespace Design Lab · Learning by making.</span><nav aria-label="Footer navigation"><a href="/">Home</a><a href="/notes/">Newsletter</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="#lab-site-top">Back to top</a></nav></div></footer>
 </body></html>
