@@ -288,6 +288,17 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   .course-list { grid-template-columns: 1fr; gap: 22px; }
 }
 @media print { .menu-jump, .lab-directory { display: none; } }
+
+/* Locally hosted examples of making; links open the complete image. */
+.work-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin: 18px 0 32px; align-items:start; }
+.work-figure { margin:0; min-width:0; }
+.work-figure a { display:block; }
+.work-figure img { display:block; width:100%; height:auto; border:1px solid var(--line); }
+.work-figure figcaption { font-size:13px; line-height:1.5; color:var(--muted); margin-top:8px; }
+.work-figure figcaption strong { color:var(--ink); font-weight:600; }
+.project .work-figure { margin:14px 0 8px; }
+@media (max-width:700px) { .work-visuals { grid-template-columns:1fr; gap:20px; margin:14px 0 26px; } }
+
 </style>
 </head>
 <body>
@@ -341,6 +352,16 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
         <p class="section-deck">Projects and open questions from the lab’s wider collection, spanning research tools, physical concepts, writing, and learning.</p>
       </div>
       <p class="work-related"><a href="inventions/">Invention categories</a></p>
+      <div class="work-visuals" aria-label="Examples of work from the lab">
+        <figure class="work-figure ">
+          <a href="images/work/conversation-modeling.png" aria-label="View full-size image: Conversation Modeling."><img src="images/work/conversation-modeling.png" width="1429" height="751" loading="lazy" decoding="async" alt="Conversational Topology Viewer: a dark network diagram of colored nodes and links, with controls and a node inspector."></a>
+          <figcaption><strong>Conversation Modeling.</strong> Working research prototype for examining conversation structure.</figcaption>
+        </figure>
+        <figure class="work-figure ">
+          <a href="images/work/atry-models-and-hypotheses.jpg" aria-label="View full-size image: Atry’s World."><img src="images/work/atry-models-and-hypotheses.jpg" width="1536" height="1126" loading="lazy" decoding="async" alt="Atry explains that researchers start with a model and test its implications; she calls the model a theory and the implications hypotheses."></a>
+          <figcaption><strong>Atry’s World.</strong> Models and hypotheses. Cartoon by Stan Ruecker.</figcaption>
+        </figure>
+      </div>
       <div class="filter-bar" hidden>
         <div class="filters" role="group" aria-label="Filter projects by focus"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="Tools" aria-pressed="false">Tools</button><button type="button" data-filter="Experiments" aria-pressed="false">Experiments</button><button type="button" data-filter="Writing" aria-pressed="false">Writing</button><button type="button" data-filter="Learning" aria-pressed="false">Learning</button></div>
         <p class="result-count" role="status" aria-live="polite" aria-atomic="true">8 projects</p>
@@ -381,6 +402,10 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   <div class="project-meta"><span>Learning / Cartoons &amp; activity books</span><span class="project-number" aria-hidden="true">04</span></div>
   <h3 id="title-atry">Atry’s World</h3>
   <p class="project-description">A science-girl cartoon project about curiosity and everyday thinking, with related activity-book and colouring-page work.</p>
+  <figure class="work-figure ">
+          <a href="images/work/atry-confounding-variables.jpg" aria-label="View full-size image: The cookie experiment."><img src="images/work/atry-confounding-variables.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="Atry explains confounding variables and proposes another cookie experiment after dinner, for science."></a>
+          <figcaption><strong>The cookie experiment.</strong> Atry’s World, by Stan Ruecker.</figcaption>
+        </figure>
   <details><summary><span>Project note<span class="sr-only">: Atry’s World</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
   <div class="project-details"><p class="project-question">Where can an ordinary question lead?</p><p class="project-note">Atry’s World brings scientific curiosity into familiar situations through cartoons. Related collection and activity-book projects give the character’s questions other forms to inhabit.</p></div></details>
 </article><article class="project" id="project-bistable-pixels" data-category="Experiments" aria-labelledby="title-bistable-pixels">
