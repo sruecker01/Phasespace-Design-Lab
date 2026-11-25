@@ -344,7 +344,15 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 @media print { .menu-jump, .lab-directory { display: none; } }
 
 /* Locally hosted examples of making; links open the complete image. */
-.work-visuals { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin: 18px 0 32px; align-items:start; }
+.work-visuals { display:grid; grid-template-columns:minmax(0,1fr); max-width:720px; gap:24px; margin:18px 0 32px; align-items:start; }
+.approach .approach-figure { max-width:860px; margin:0 0 44px; }
+.approach .approach-figure figcaption { color:#d7d7d7; }
+.approach .approach-figure figcaption strong, .approach .approach-figure figcaption a { color:inherit; }
+.participation-pathways { grid-column:1/-1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin:32px 0 0; padding:0; list-style:none; }
+.participation-pathways li { border-top:1px solid var(--line); padding-top:12px; font-size:14px; line-height:1.6; }
+.participation-pathways a { font-weight:600; }
+.participation-pathways span { display:block; color:var(--muted); margin-top:5px; }
+@media(max-width:700px){ .participation-pathways{grid-template-columns:1fr;} .approach .approach-figure{margin-bottom:30px;} }
 .work-figure { margin:0; min-width:0; }
 .work-figure a { display:block; }
 .work-figure img { display:block; width:100%; height:auto; border:1px solid var(--line); }
@@ -400,7 +408,6 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
         </ul>
       </div>
     </nav>
-    <div class="wrap hero-foot"><span>Research through design</span><span>Ideas made examinable</span></div>
     <section class="wrap recent-updates" aria-labelledby="recent-title">
       <div class="recent-heading"><h2 id="recent-title">Recently added</h2></div>
       <div class="recent-grid">
@@ -428,10 +435,6 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
       </div>
       <p class="work-related"><a href="inventions/">Invention categories</a></p>
       <div class="work-visuals" aria-label="Examples of work from the lab">
-        <figure class="work-figure ">
-          <a href="images/work/conversation-modeling.png" aria-label="View full-size image: Conversation Modeling."><img src="images/work/conversation-modeling.png" width="1429" height="751" loading="lazy" decoding="async" alt="Conversational Topology Viewer: a dark network diagram of colored nodes and links, with controls and a node inspector."></a>
-          <figcaption><strong>Conversation Modeling.</strong> Working research prototype for examining conversation structure.</figcaption>
-        </figure>
         <figure class="work-figure ">
           <a href="images/work/atry-models-and-hypotheses.jpg" aria-label="View full-size image: Atry’s World."><img src="images/work/atry-models-and-hypotheses.jpg" width="1536" height="1126" loading="lazy" decoding="async" alt="Atry explains that researchers start with a model and test its implications; she calls the model a theory and the implications hypotheses."></a>
           <figcaption><strong>Atry’s World.</strong> Models and hypotheses. Cartoon by Stan Ruecker.</figcaption>
@@ -475,7 +478,7 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   <div class="project-details"><p class="project-question">What lets an idea survive, and what makes it difficult to displace?</p><p class="project-note">This writing project follows ideas through the circumstances that sustain them or make them difficult to continue. Case-based research informs the developing series.</p></div></details>
 </article><article class="project" id="project-atry" data-category="Learning" aria-labelledby="title-atry">
   <div class="project-meta"><span>Learning / Cartoons &amp; activity books</span><span class="project-number" aria-hidden="true">04</span></div>
-  <h3 id="title-atry">Atry’s World</h3>
+  <h3 id="title-atry">Atry’s World: Everything is an experiment</h3>
   <p class="project-description">A science-girl cartoon project about curiosity and everyday thinking, with related activity-book and colouring-page work.</p>
   <figure class="work-figure ">
           <a href="images/work/atry-confounding-variables.jpg" aria-label="View full-size image: The cookie experiment."><img src="images/work/atry-confounding-variables.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="Atry explains confounding variables and proposes another cookie experiment after dinner, for science."></a>
@@ -519,7 +522,6 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
   <details><summary><span>Project note<span class="sr-only">: Perennial protein shrubs</span></span><span class="expand-icon" aria-hidden="true">+</span></summary>
   <div class="project-details"><p class="project-question">Could a hardy legume yield recoverable, usable protein over repeated harvests?</p><p class="project-note">The investigation connects Caragana genome resources, pod shattering, seed chemistry, and exploratory models. No Caragana plants have been edited or validated as a new edible crop.</p></div></details>
 </article></div>
-      <p class="elsewhere">Elsewhere in the lab: a stool attached to a cart, instant toast with light, conversational modelling, and animal-free rodeos.</p>
     </section>
     <section class="wrap section publications" id="preprints" aria-labelledby="preprints-title">
       <div class="section-header"><div><p class="eyebrow">02 / Preprints</p><h2 id="preprints-title">Ideas in circulation.</h2></div>
@@ -544,6 +546,7 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
         <article>
           <h3>Teaching Writing with LLMs</h3>
           <p>A course for writing instructors on using large language models in their teaching.</p>
+          <p class="course-more"><a href="mailto:contact@phasespacedesignlab.org?subject=Teaching%20Writing%20with%20LLMs%20enquiry">Enquire about the course ↗</a></p>
         </article>
         <article>
           <h3>Understanding LLMs</h3>
@@ -557,6 +560,10 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
           <div><p class="eyebrow">04 / The approach</p><h2 id="approach-title">Room for another possibility.</h2></div>
           <p class="approach-intro">A prototype gives an idea a form we can examine. Making it can reveal an assumption, bring a disagreement into focus, or open a different direction.</p>
         </div>
+        <figure class="work-figure approach-figure">
+          <a href="images/work/conversation-modeling.png" aria-label="View full-size image: Conversation Modeling."><img src="images/work/conversation-modeling.png" width="1429" height="751" loading="lazy" decoding="async" alt="Conversational Topology Viewer: a dark network diagram of colored nodes and links, with controls and a node inspector."></a>
+          <figcaption><strong><a href="software/#conversation-modeling">Conversation Modeling.</a></strong> Working research prototype for examining conversation structure.</figcaption>
+        </figure>
         <div class="principles"><div class="principle"><h3>Keep alternatives in view.</h3><p>More than one interpretation can remain useful while the evidence is developing.</p></div><div class="principle"><h3>Make assumptions examinable.</h3><p>Models and prototypes bring assumptions and trade-offs into a form that others can question.</p></div><div class="principle"><h3>Keep claims proportionate.</h3><p>A promising question, a working prototype, and a supported finding are different kinds of contribution.</p></div><div class="principle"><h3>Make continuation possible.</h3><p>Editable materials, clear credit, and recoverable decisions help work continue beyond one iteration.</p></div></div>
         <div class="approach-notes">
           <details><summary>A brief introduction to PSCI<span class="expand-icon" aria-hidden="true">+</span></summary><div class="note-body"><p>Phasespace Custodial Intelligence (PSCI) is an approach to working with systems as fields of possible states and paths. It pays attention to which possibilities remain viable, what an intervention might close off, and how the ability to recover can be preserved.</p></div></details>
@@ -574,7 +581,13 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-inner">
         <div><p class="eyebrow">06 / Get in touch</p><h2 id="contact-title">Something worth exploring?</h2><p class="contact-description">Research collaborations, prototypes, writing, teaching, and conversations about putting the work to use are welcome.</p></div>
-        <div class="contact-action"><a class="button" href="mailto:sruecker01@gmail.com">Write to Stan <span aria-hidden="true">↗</span></a><a class="email-link" href="mailto:sruecker01@gmail.com">sruecker01@gmail.com</a><p>For collaboration or enquiries about individual projects.</p></div>
+        <div class="contact-action"><a class="button" href="mailto:contact@phasespacedesignlab.org">Contact the lab <span aria-hidden="true">↗</span></a><a class="email-link" href="mailto:contact@phasespacedesignlab.org">contact@phasespacedesignlab.org</a><p>For collaboration or enquiries about individual projects.</p></div>
+        <ul class="participation-pathways" aria-label="Ways to participate">
+          <li><a href="mailto:contact@phasespacedesignlab.org?subject=Research%20collaboration">Research collaborations ↗</a><span>Discuss a research question or a possible joint project.</span></li>
+          <li><a href="/courses/design-methods-studio/">Course adoption ↗</a><span>Explore teaching materials and adoption options.</span></li>
+          <li><a href="/software/">Software and prototypes ↗</a><span>Explore the research instruments and discuss their development.</span></li>
+          <li><a href="mailto:contact@phasespacedesignlab.org?subject=Invention%20enquiry">Invention enquiries ↗</a><span>Discuss licensing or development of an invention.</span></li>
+        </ul>
       </div>
     </section>
   </main>
