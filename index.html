@@ -374,7 +374,9 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
 .lab-directory.inline-directory { display: block; padding-bottom: 28px; }
 .inline-directory p { max-width: 780px; margin: 0 0 14px; font-size: 16px; line-height: 1.8; }
 .inline-directory p:last-child { margin-bottom: 0; }
-.inline-directory a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.inline-directory a { font: inherit; padding-block: 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+@media screen { .hero { padding-bottom: 30px; } .hero-intro { margin-bottom: 0; } }
+@media screen and (max-width: 700px) { .hero { padding-bottom: 22px; } }
 .inline-directory a:hover { text-decoration-thickness: 2px; }
 </style>
 </head>
@@ -397,11 +399,10 @@ details[open] > summary .expand-icon { transform: rotate(45deg); }
       </div>
       <div class="hero-description">
         <p class="hero-intro">We design tools, methods, and environments that improve human inquiry, knowledge production, and action.</p>
-        <p class="hero-note">Software, experimental objects, books, cartoons, and other ways of finding out.</p>
       </div>
     </section>
     <nav class="wrap lab-directory inline-directory" id="lab-directory" aria-label="Lab directory">
-      <p>This website contains <a href="#work">selected work</a>, <a href="#inventions">inventions</a>, <a href="preprints/">preprints</a>, <a href="research-registries/">research registries</a>, <a id="project-registrymaker" href="software/">software</a>, <a href="books/">books</a>, <a id="project-atry" href="atry/">Atry’s World</a>, <a href="#courses">courses</a>, and a <a href="notes/">newsletter</a>.</p>
+      <p>This website contains <a href="books/">books</a>, <a id="project-registrymaker" href="software/">software</a>, <a href="#courses">courses</a>, <a href="#inventions">inventions</a>, <a href="#work">selected work</a>, <a href="preprints/">preprints</a>, <a href="research-registries/">research registries</a>, <a id="project-atry" href="atry/">Atry’s World</a>, and a <a href="notes/">newsletter</a>.</p>
       <p>About the lab: <a href="#approach">our approach</a>, <a href="#people">people</a>, and <a href="#contact">contact information</a>.</p>
     </nav>
     <section class="wrap recent-updates" aria-labelledby="recent-title">
